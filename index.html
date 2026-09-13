@@ -3,1454 +3,323 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Grace & Adventures: My Bucket List
-faith • dreams • books • sports • people • places • memories</title>
-
+<meta name="description" content="Grace & Adventures — a little collection of faith, dreams, books, sports, people, places, and memories.">
+<meta name="theme-color" content="#b9dce8">
+<title>Grace & Adventures 🦋</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
 <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
-
 <style>
-
-:root {
-    --blue: #b9dce8;
-    --blue-dark: #4e7885;
-    --sage: #9fc5b5;
-    --sage-dark: #52796f;
-    --cream: #f7f5ed;
-    --white: #ffffff;
-    --text: #40534d;
-    --muted: #7a8984;
-    --border: #d9e6df;
-    --gold: #d3ac58;
+:root{
+  --blue:#b9dce8;--blue-dark:#4e7885;--sage:#9fc5b5;--sage-dark:#52796f;
+  --cream:#f7f5ed;--white:#fff;--text:#40534d;--muted:#7a8984;
+  --border:#d9e6df;--gold:#d3ac58;--pink:#e8c8d2;--shadow:0 10px 28px rgba(70,90,80,.10);
 }
-
-* {
-    box-sizing: border-box;
-}
-
-body {
-    margin: 0;
-    background: var(--cream);
-    color: var(--text);
-    font-family: "Lexend", sans-serif;
-}
-
-button,
-input,
-select {
-    font-family: "Lexend", sans-serif;
-}
-
-button {
-    cursor: pointer;
-}
-
-/* ---------- HEADER ---------- */
-
-header {
-    background: linear-gradient(
-        135deg,
-        #b9dce8,
-        #d8e8d1
-    );
-
-    padding: 42px 20px 35px;
-    text-align: center;
-}
-
-.logo {
-    font-size: 46px;
-    margin-bottom: 8px;
-}
-
-h1,
-h2,
-h3 {
-    font-family: "Quicksand", sans-serif;
-}
-
-h1 {
-    margin: 0;
-    color: #365f6b;
-    font-size: clamp(34px, 7vw, 52px);
-}
-
-.tagline {
-    margin: 10px auto 25px;
-    color: #54716e;
-    font-size: 15px;
-}
-
-/* ---------- PROGRESS ---------- */
-
-.progress-card {
-    max-width: 700px;
-    margin: auto;
-    background: rgba(255,255,255,.8);
-    padding: 20px;
-    border-radius: 22px;
-}
-
-.progress-text {
-    font-size: 17px;
-    font-weight: 600;
-}
-
-.progress-bar {
-    height: 16px;
-    background: #e4ebe7;
-    border-radius: 20px;
-    margin-top: 12px;
-    overflow: hidden;
-}
-
-.progress-fill {
-    height: 100%;
-    width: 0%;
-    background: #79a99a;
-    border-radius: 20px;
-    transition: width .5s ease;
-}
-
-/* ---------- MAIN ---------- */
-
-main {
-    width: min(1100px, 94%);
-    margin: auto;
-    padding: 30px 0 60px;
-}
-
-/* ---------- DASHBOARD ---------- */
-
-.dashboard {
-    display: grid;
-    grid-template-columns: repeat(
-        auto-fit,
-        minmax(160px, 1fr)
-    );
-
-    gap: 15px;
-    margin-bottom: 30px;
-}
-
-.stat {
-    background: white;
-    padding: 20px;
-    border-radius: 20px;
-    text-align: center;
-    border: 1px solid var(--border);
-}
-
-.stat-icon {
-    font-size: 27px;
-}
-
-.stat-number {
-    font-size: 25px;
-    font-weight: 700;
-    color: var(--sage-dark);
-    margin-top: 5px;
-}
-
-.stat-label {
-    color: var(--muted);
-    font-size: 12px;
-}
-
-/* ---------- CONTROLS ---------- */
-
-.controls {
-    background: white;
-    padding: 20px;
-    border-radius: 22px;
-    margin-bottom: 25px;
-    border: 1px solid var(--border);
-}
-
-.controls-row {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-}
-
-.search {
-    flex: 1;
-    min-width: 200px;
-}
-
-.search,
-select {
-    padding: 12px 14px;
-    border-radius: 12px;
-    border: 2px solid var(--border);
-    background: white;
-    color: var(--text);
-}
-
-.search:focus,
-select:focus {
-    outline: none;
-    border-color: var(--sage);
-}
-
-/* ---------- BUTTONS ---------- */
-
-.primary {
-    border: none;
-    background: var(--sage-dark);
-    color: white;
-    padding: 12px 18px;
-    border-radius: 12px;
-    font-weight: 600;
-}
-
-.primary:hover {
-    background: #41675e;
-}
-
-.secondary {
-    border: 2px solid var(--border);
-    background: white;
-    color: var(--sage-dark);
-    padding: 10px 15px;
-    border-radius: 12px;
-}
-
-/* ---------- SECTION ---------- */
-
-.section-title {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 10px;
-    margin: 30px 0 15px;
-}
-
-.section-title h2 {
-    color: var(--sage-dark);
-    margin: 0;
-}
-
-/* ---------- BUCKET LIST ---------- */
-
-.bucket-grid {
-    display: grid;
-    grid-template-columns: repeat(
-        auto-fit,
-        minmax(260px, 1fr)
-    );
-
-    gap: 17px;
-}
-
-.bucket-card {
-    background: white;
-    border-radius: 21px;
-    padding: 20px;
-    border: 2px solid var(--border);
-    position: relative;
-    transition: transform .2s, box-shadow .2s;
-}
-
-.bucket-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 22px rgba(70,90,80,.10);
-}
-
-.bucket-card.done {
-    background: #edf5ee;
-    border-color: #a6c8b0;
-}
-
-.category {
-    display: inline-block;
-    background: #edf4f1;
-    color: var(--sage-dark);
-    padding: 5px 9px;
-    border-radius: 20px;
-    font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: .7px;
-    font-weight: 600;
-}
-
-.bucket-card h3 {
-    font-size: 21px;
-    margin: 14px 0 8px;
-    color: #456963;
-}
-
-.bucket-card.done h3 {
-    text-decoration: line-through;
-    opacity: .7;
-}
-
-.description {
-    color: var(--muted);
-    font-size: 13px;
-    min-height: 20px;
-}
-
-.stars {
-    color: var(--gold);
-    letter-spacing: 2px;
-    margin: 14px 0;
-}
-
-.status {
-    font-size: 12px;
-    color: var(--muted);
-    margin-bottom: 12px;
-}
-
-.card-buttons {
-    display: flex;
-    gap: 8px;
-}
-
-.done-button {
-    flex: 1;
-    border: none;
-    padding: 10px;
-    border-radius: 11px;
-    background: #9fc5b5;
-    color: white;
-    font-weight: 600;
-}
-
-.done-button:hover {
-    background: #79a99a;
-}
-
-.delete-button {
-    border: none;
-    background: #f2eeee;
-    color: #967878;
-    border-radius: 11px;
-    padding: 10px 12px;
-}
-
-/* ---------- MODAL ---------- */
-
-.modal-background {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(40,55,50,.45);
-    z-index: 10;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-}
-
-.modal-background.show {
-    display: flex;
-}
-
-.modal {
-    width: min(500px, 100%);
-    background: white;
-    border-radius: 25px;
-    padding: 27px;
-    box-shadow: 0 20px 50px rgba(30,50,40,.2);
-}
-
-.modal h2 {
-    color: var(--sage-dark);
-    margin-top: 0;
-}
-
-.form-group {
-    margin-bottom: 15px;
-}
-
-.form-group label {
-    display: block;
-    font-size: 13px;
-    font-weight: 600;
-    margin-bottom: 7px;
-}
-
-.form-group input,
-.form-group select {
-    width: 100%;
-}
-
-.form-group input {
-    padding: 12px;
-    border: 2px solid var(--border);
-    border-radius: 11px;
-}
-
-.stars-input {
-    display: flex;
-    gap: 5px;
-}
-
-.star-choice {
-    font-size: 25px;
-    border: none;
-    background: none;
-    color: #d9d1bd;
-    padding: 0;
-}
-
-.star-choice.selected {
-    color: var(--gold);
-}
-
-.modal-buttons {
-    display: flex;
-    justify-content: flex-end;
-    gap: 10px;
-    margin-top: 20px;
-}
-
-/* ---------- EMPTY ---------- */
-
-.empty {
-    text-align: center;
-    padding: 45px 20px;
-    background: white;
-    border-radius: 22px;
-    border: 2px dashed var(--border);
-}
-
-.empty-icon {
-    font-size: 45px;
-}
-
-.empty h3 {
-    color: var(--sage-dark);
-}
-
-/* ---------- QUOTE ---------- */
-
-.quote {
-    text-align: center;
-    font-family: "Quicksand", sans-serif;
-    font-size: 20px;
-    color: var(--sage-dark);
-    padding: 35px 15px;
-}
-
-/* ---------- FOOTER ---------- */
-
-footer {
-    text-align: center;
-    padding: 25px;
-    color: var(--muted);
-    font-size: 12px;
-}
-
-/* ---------- RESPONSIVE ---------- */
-
-@media (max-width: 600px) {
-
-    header {
-        padding-top: 30px;
-    }
-
-    .bucket-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .controls-row {
-        flex-direction: column;
-    }
-
-    .search,
-    select,
-    .controls-row button {
-        width: 100%;
-    }
-}
-
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--text);font-family:"Lexend",sans-serif}
+button,input,select,textarea{font:inherit}
+button{cursor:pointer}
+header{background:linear-gradient(135deg,#b9dce8,#d8e8d1 55%,#f4eadf);padding:38px 20px 30px;text-align:center}
+.logo{font-size:42px;margin-bottom:4px}
+h1,h2,h3{font-family:"Quicksand",sans-serif}
+h1{margin:0;color:#365f6b;font-size:clamp(36px,7vw,56px)}
+.tagline{margin:8px auto 22px;color:#54716e;font-size:14px}
+.progress-card{max-width:720px;margin:auto;background:rgba(255,255,255,.84);padding:18px 20px;border-radius:24px}
+.progress-text{font-size:16px;font-weight:600}.progress-bar{height:15px;background:#e4ebe7;border-radius:20px;margin-top:11px;overflow:hidden}
+.progress-fill{height:100%;width:0;background:#79a99a;border-radius:20px;transition:width .5s}
+nav{position:sticky;top:0;z-index:8;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);display:flex;gap:7px;justify-content:center;flex-wrap:wrap;padding:10px}
+nav button{border:0;background:#edf4f1;color:var(--sage-dark);padding:9px 13px;border-radius:999px;font-weight:600}
+nav button:hover,nav button.active{background:var(--sage-dark);color:white}
+main{width:min(1100px,94%);margin:auto;padding:26px 0 55px}
+.view{display:none}.view.active{display:block}
+.dashboard{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-bottom:25px}
+.stat{background:white;padding:18px;border-radius:20px;text-align:center;border:1px solid var(--border);box-shadow:0 4px 15px rgba(70,90,80,.04)}
+.stat-icon{font-size:25px}.stat-number{font-size:24px;font-weight:700;color:var(--sage-dark);margin-top:4px}.stat-label{color:var(--muted);font-size:11px}
+.section-title{display:flex;justify-content:space-between;align-items:center;gap:10px;margin:25px 0 14px}.section-title h2{color:var(--sage-dark);margin:0}
+.controls{background:white;padding:18px;border-radius:22px;margin-bottom:20px;border:1px solid var(--border)}
+.controls-row{display:flex;gap:9px;flex-wrap:wrap}
+.search,.controls select,.form-group input,.form-group select,.form-group textarea{padding:11px 13px;border-radius:12px;border:2px solid var(--border);background:white;color:var(--text)}
+.search{flex:1;min-width:200px}.search:focus,.controls select:focus,.form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--sage)}
+.primary{border:0;background:var(--sage-dark);color:white;padding:11px 17px;border-radius:12px;font-weight:600}.primary:hover{background:#41675e}
+.secondary{border:2px solid var(--border);background:white;color:var(--sage-dark);padding:9px 14px;border-radius:12px}
+.bucket-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.bucket-card{background:white;border-radius:21px;padding:19px;border:2px solid var(--border);transition:.2s;box-shadow:0 4px 15px rgba(70,90,80,.04)}
+.bucket-card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.bucket-card.done{background:#edf5ee;border-color:#a6c8b0}.bucket-card.done h3{text-decoration:line-through;opacity:.7}
+.category{display:inline-block;background:#edf4f1;color:var(--sage-dark);padding:5px 9px;border-radius:20px;font-size:10px;text-transform:uppercase;letter-spacing:.7px;font-weight:600}
+.bucket-card h3{font-size:20px;margin:12px 0 7px;color:#456963}.description{color:var(--muted);font-size:12px;min-height:18px}
+.stars{color:var(--gold);letter-spacing:2px;margin:12px 0}.status{font-size:12px;color:var(--muted);margin-bottom:11px}
+.card-buttons{display:flex;gap:8px}.done-button{flex:1;border:0;padding:9px;border-radius:11px;background:#9fc5b5;color:white;font-weight:600}.done-button:hover{background:#79a99a}
+.delete-button{border:0;background:#f2eeee;color:#967878;border-radius:11px;padding:9px 12px}
+.hero-note{background:linear-gradient(135deg,#edf5f0,#eef7fa);border:1px solid var(--border);border-radius:24px;padding:24px;margin-bottom:22px}
+.hero-note h2{margin:0 0 7px;color:var(--sage-dark)}.hero-note p{margin:0;color:var(--muted);line-height:1.6}
+.state-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.state{background:white;border:2px solid var(--border);border-radius:16px;padding:13px;display:flex;align-items:center;gap:9px;text-align:left}
+.state.visited{background:#edf5ee;border-color:#9fc5b5}.state input{accent-color:var(--sage-dark);width:18px;height:18px}.state-name{font-weight:600;font-size:13px}.state-code{color:var(--muted);font-size:10px}
+.states-progress{font-size:15px;font-weight:600;color:var(--sage-dark);margin:12px 0}
+.random-box{background:linear-gradient(135deg,#dceef4,#edf5ee);border-radius:28px;padding:38px 25px;text-align:center;border:1px solid var(--border)}
+.random-emoji{font-size:48px}.random-box h2{font-size:28px;color:#456963}.random-result{min-height:45px;font-size:20px;font-weight:600;margin:18px auto;max-width:650px}
+.achievement-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.achievement{background:white;border:2px solid var(--border);border-radius:20px;padding:18px;opacity:.5}.achievement.unlocked{opacity:1;background:#fffdf4;border-color:#e4d49f}
+.achievement-icon{font-size:30px}.achievement h3{margin:7px 0 5px;color:var(--sage-dark)}.achievement p{margin:0;color:var(--muted);font-size:12px}.badge{display:inline-block;margin-top:10px;font-size:10px;font-weight:700;color:#9a7a31}
+.memory-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:15px}.memory{background:white;border:2px solid var(--border);border-radius:20px;padding:18px}.memory h3{margin:7px 0;color:#456963}.memory-meta{font-size:11px;color:var(--muted);line-height:1.6}.memory-note{font-size:13px;line-height:1.5;margin-top:9px}
+.quote{text-align:center;font-family:"Quicksand",sans-serif;font-size:19px;color:var(--sage-dark);padding:30px 15px}
+.empty{text-align:center;padding:40px 20px;background:white;border-radius:22px;border:2px dashed var(--border)}.empty-icon{font-size:42px}.empty h3{color:var(--sage-dark)}
+.modal-background{display:none;position:fixed;inset:0;background:rgba(40,55,50,.45);z-index:20;align-items:center;justify-content:center;padding:18px}.modal-background.show{display:flex}
+.modal{width:min(520px,100%);max-height:92vh;overflow:auto;background:white;border-radius:25px;padding:25px;box-shadow:0 20px 50px rgba(30,50,40,.2)}
+.modal h2{color:var(--sage-dark);margin-top:0}.form-group{margin-bottom:14px}.form-group label{display:block;font-size:12px;font-weight:700;margin-bottom:6px}.form-group input,.form-group select,.form-group textarea{width:100%}.form-group textarea{min-height:80px;resize:vertical}
+.stars-input{display:flex;gap:5px}.star-choice{font-size:25px;border:0;background:none;color:#d9d1bd;padding:0}.star-choice.selected{color:var(--gold)}
+.modal-buttons{display:flex;justify-content:flex-end;gap:9px;margin-top:18px}
+footer{text-align:center;padding:25px;color:var(--muted);font-size:12px}
+.toast{position:fixed;right:18px;bottom:18px;background:var(--sage-dark);color:white;padding:12px 16px;border-radius:14px;box-shadow:var(--shadow);display:none;z-index:30;font-size:13px}
+@media(max-width:600px){header{padding-top:27px}.bucket-grid,.achievement-grid,.memory-grid{grid-template-columns:1fr}.controls-row{flex-direction:column}.search,.controls select,.controls-row button{width:100%}.state-grid{grid-template-columns:repeat(2,1fr)}}
 </style>
 </head>
-
 <body>
-
 <header>
-
-    <div class="logo">🗺️ ✈️ 🌎</div>
-
-    <h1>My Little Bucket List</h1>
-
-    <div class="tagline">
-        little dreams • big adventures • unforgettable memories ✨
-    </div>
-
-    <div class="progress-card">
-
-        <div class="progress-text">
-            <span id="completedCount">0</span>
-            of
-            <span id="totalCount">0</span>
-            adventures completed!
-        </div>
-
-        <div class="progress-bar">
-            <div
-                class="progress-fill"
-                id="progressFill">
-            </div>
-        </div>
-
-    </div>
-
+  <div class="logo">🦋 🌿 ✨</div>
+  <h1>Grace & Adventures</h1>
+  <div class="tagline">faith • dreams • books • sports • people • places • memories</div>
+  <div class="progress-card">
+    <div class="progress-text"><span id="completedCount">0</span> of <span id="totalCount">0</span> dreams completed ✨</div>
+    <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+  </div>
 </header>
 
+<nav>
+  <button class="active" onclick="showView('home',this)">🏠 Home</button>
+  <button onclick="showView('states',this)">🇺🇸 50 States</button>
+  <button onclick="showView('dreams',this)">✨ Dreams</button>
+  <button onclick="showView('memories',this)">📸 Memories</button>
+  <button onclick="showView('achievements',this)">🏆 Achievements</button>
+</nav>
+
 <main>
+<section id="home" class="view active">
+  <div class="hero-note">
+    <h2>Welcome to your little corner of the world 🩵</h2>
+    <p>A place for the things you hope to see, the people you want to share them with, the adventures you want to remember, and the faith that goes with you along the way.</p>
+  </div>
+  <div class="dashboard">
+    <div class="stat"><div class="stat-icon">✨</div><div class="stat-number" id="dreamCount">0</div><div class="stat-label">dreams</div></div>
+    <div class="stat"><div class="stat-icon">✅</div><div class="stat-number" id="doneCount">0</div><div class="stat-label">completed</div></div>
+    <div class="stat"><div class="stat-icon">🇺🇸</div><div class="stat-number" id="stateCount">0</div><div class="stat-label">states visited</div></div>
+    <div class="stat"><div class="stat-icon">🏆</div><div class="stat-number" id="achievementCount">0</div><div class="stat-label">achievements</div></div>
+  </div>
+  <div class="random-box">
+    <div class="random-emoji">🎲</div>
+    <h2>What adventure should you dream about?</h2>
+    <div class="random-result" id="randomResult">Click the button and let your bucket list choose! ✨</div>
+    <button class="primary" onclick="randomDream()">Give me an adventure!</button>
+  </div>
+  <div class="section-title"><h2>🌿 A little reminder</h2></div>
+  <div class="hero-note"><p>“You don't have to do everything at once. A beautiful life is made one little adventure, one good book, one laugh with a friend, and one faithful step at a time.” 🦋</p></div>
+</section>
 
-    <!-- DASHBOARD -->
+<section id="states" class="view">
+  <div class="hero-note">
+    <h2>🇺🇸 The 50 States Challenge</h2>
+    <p>Check off every state you've visited. Your progress is saved in this browser.</p>
+  </div>
+  <div class="states-progress"><span id="statesVisited">0</span> / 50 states explored 🌎</div>
+  <div class="progress-bar"><div class="progress-fill" id="statesFill"></div></div>
+  <div class="state-grid" id="stateGrid"></div>
+</section>
 
-    <div class="dashboard">
-
-        <div class="stat">
-            <div class="stat-icon">✨</div>
-            <div
-                class="stat-number"
-                id="dreamCount">
-                0
-            </div>
-            <div class="stat-label">
-                dreams
-            </div>
-        </div>
-
-        <div class="stat">
-            <div class="stat-icon">✅</div>
-            <div
-                class="stat-number"
-                id="doneCount">
-                0
-            </div>
-            <div class="stat-label">
-                completed
-            </div>
-        </div>
-
-        <div class="stat">
-            <div class="stat-icon">🌎</div>
-            <div
-                class="stat-number"
-                id="categoryCount">
-                0
-            </div>
-            <div class="stat-label">
-                categories
-            </div>
-        </div>
-
-        <div class="stat">
-            <div class="stat-icon">⭐</div>
-            <div
-                class="stat-number"
-                id="fiveStarCount">
-                0
-            </div>
-            <div class="stat-label">
-                BIG dreams
-            </div>
-        </div>
-
+<section id="dreams" class="view">
+  <div class="controls">
+    <div class="controls-row">
+      <input class="search" id="searchInput" type="text" placeholder="🔍 Search your dreams...">
+      <select id="categoryFilter"><option value="All">All categories</option></select>
+      <select id="statusFilter"><option value="All">All statuses</option><option>Someday</option><option>Planning</option><option>Done</option></select>
+      <button class="primary" onclick="openModal()">+ Add dream</button>
     </div>
+  </div>
+  <div class="section-title"><h2>✨ My Dreams</h2></div>
+  <div class="bucket-grid" id="bucketList"></div>
+  <div class="quote">“There are so many beautiful things left to discover.” 🌿</div>
+</section>
 
+<section id="memories" class="view">
+  <div class="hero-note"><h2>📸 Little Memories</h2><p>Save the moments that turn your dreams into stories. This section is private to this browser unless you share your site or data elsewhere.</p></div>
+  <div class="section-title"><h2>My Memories</h2><button class="primary" onclick="openMemoryModal()">+ Add memory</button></div>
+  <div class="memory-grid" id="memoryGrid"></div>
+</section>
 
-    <!-- CONTROLS -->
-
-    <div class="controls">
-
-        <div class="controls-row">
-
-            <input
-                class="search"
-                id="searchInput"
-                type="text"
-                placeholder="🔍 Search your bucket list...">
-
-            <select id="categoryFilter">
-                <option value="All">All categories</option>
-            </select>
-
-            <select id="statusFilter">
-                <option value="All">All statuses</option>
-                <option value="Someday">Someday</option>
-                <option value="Planning">Planning</option>
-                <option value="Done">Done</option>
-            </select>
-
-            <button
-                class="primary"
-                onclick="openModal()">
-                + Add dream
-            </button>
-
-        </div>
-
-    </div>
-
-
-    <!-- LIST -->
-
-    <div class="section-title">
-
-        <h2>✨ My Dreams</h2>
-
-    </div>
-
-    <div
-        class="bucket-grid"
-        id="bucketList">
-    </div>
-
-
-    <div class="quote">
-        “There are so many beautiful things left to discover.” 🌿
-    </div>
-
+<section id="achievements" class="view">
+  <div class="hero-note"><h2>🏆 Your Adventure Badges</h2><p>Keep living your list and little badges will unlock along the way!</p></div>
+  <div class="achievement-grid" id="achievementGrid"></div>
+</section>
 </main>
 
+<footer>Made with grace, dreams & a want to adventure 🩵🦋</footer>
+<div class="toast" id="toast"></div>
 
-<footer>
-    Made for dreaming, exploring & making memories 🩵
-</footer>
-
-
-<!-- ADD MODAL -->
-
-<div
-    class="modal-background"
-    id="modalBackground">
-
-    <div class="modal">
-
-        <h2>✨ Add a bucket-list dream</h2>
-
-        <div class="form-group">
-
-            <label for="itemName">
-                What do you want to do?
-            </label>
-
-            <input
-                id="itemName"
-                placeholder="Visit the Eiffel Tower...">
-
-        </div>
-
-
-        <div class="form-group">
-
-            <label for="itemCategory">
-                Category
-            </label>
-
-            <select id="itemCategory">
-
-                <option>Places</option>
-                <option>Experiences</option>
-                <option>Concerts</option>
-                <option>Books & Hobbies</option>
-                <option>Faith</option>
-                <option>Family & Friends</option>
-                <option>Sports</option>
-                <option>Random</option>
-
-            </select>
-
-        </div>
-
-
-        <div class="form-group">
-
-            <label>
-                How badly do I want this?
-            </label>
-
-            <div class="stars-input">
-
-                <button
-                    class="star-choice"
-                    data-star="1"
-                    onclick="chooseStars(1)">
-                    ★
-                </button>
-
-                <button
-                    class="star-choice"
-                    data-star="2"
-                    onclick="chooseStars(2)">
-                    ★
-                </button>
-
-                <button
-                    class="star-choice"
-                    data-star="3"
-                    onclick="chooseStars(3)">
-                    ★
-                </button>
-
-                <button
-                    class="star-choice"
-                    data-star="4"
-                    onclick="chooseStars(4)">
-                    ★
-                </button>
-
-                <button
-                    class="star-choice"
-                    data-star="5"
-                    onclick="chooseStars(5)">
-                    ★
-                </button>
-
-            </div>
-
-        </div>
-
-
-        <div class="form-group">
-
-            <label for="itemStatus">
-                Status
-            </label>
-
-            <select id="itemStatus">
-
-                <option>Someday</option>
-                <option>Planning</option>
-                <option>Done</option>
-
-            </select>
-
-        </div>
-
-
-        <div class="form-group">
-
-            <label for="itemDescription">
-                Tiny note (optional)
-            </label>
-
-            <input
-                id="itemDescription"
-                placeholder="Who do I want to do this with?">
-
-        </div>
-
-
-        <div class="modal-buttons">
-
-            <button
-                class="secondary"
-                onclick="closeModal()">
-                Cancel
-            </button>
-
-            <button
-                class="primary"
-                onclick="addItem()">
-                Add to my list ✨
-            </button>
-
-        </div>
-
-    </div>
-
+<div class="modal-background" id="modalBackground">
+  <div class="modal">
+    <h2>✨ Add a bucket-list dream</h2>
+    <div class="form-group"><label for="itemName">What do you want to do?</label><input id="itemName" placeholder="Visit the Eiffel Tower..."></div>
+    <div class="form-group"><label for="itemCategory">Category</label><select id="itemCategory"><option>Places</option><option>Experiences</option><option>Concerts</option><option>Books & Hobbies</option><option>Faith</option><option>Family & Friends</option><option>Sports</option><option>Random</option></select></div>
+    <div class="form-group"><label>How badly do I want this?</label><div class="stars-input">
+      <button class="star-choice" data-star="1" onclick="chooseStars(1)">★</button><button class="star-choice" data-star="2" onclick="chooseStars(2)">★</button><button class="star-choice" data-star="3" onclick="chooseStars(3)">★</button><button class="star-choice" data-star="4" onclick="chooseStars(4)">★</button><button class="star-choice" data-star="5" onclick="chooseStars(5)">★</button>
+    </div></div>
+    <div class="form-group"><label for="itemStatus">Status</label><select id="itemStatus"><option>Someday</option><option>Planning</option><option>Done</option></select></div>
+    <div class="form-group"><label for="itemDescription">Tiny note (optional)</label><input id="itemDescription" placeholder="Who do I want to do this with?"></div>
+    <div class="modal-buttons"><button class="secondary" onclick="closeModal()">Cancel</button><button class="primary" onclick="addItem()">Add to my list ✨</button></div>
+  </div>
 </div>
 
+<div class="modal-background" id="memoryModalBackground">
+  <div class="modal">
+    <h2>📸 Save a little memory</h2>
+    <div class="form-group"><label for="memoryTitle">What happened?</label><input id="memoryTitle" placeholder="The best day at Niagara Falls..."></div>
+    <div class="form-group"><label for="memoryDate">Date</label><input id="memoryDate" type="date"></div>
+    <div class="form-group"><label for="memoryWith">Who were you with?</label><input id="memoryWith" placeholder="Family, friends, youth group..."></div>
+    <div class="form-group"><label for="memoryPlace">Where?</label><input id="memoryPlace" placeholder="Colorado..."></div>
+    <div class="form-group"><label for="memoryNote">A little note</label><textarea id="memoryNote" placeholder="What do you want to remember?"></textarea></div>
+    <div class="modal-buttons"><button class="secondary" onclick="closeMemoryModal()">Cancel</button><button class="primary" onclick="addMemory()">Save memory 🦋</button></div>
+  </div>
+</div>
 
 <script>
-
-/* ==========================================
-   🩵 MY LITTLE BUCKET LIST
-   ========================================== */
-
-
-/* ---------- STARTER ITEMS ---------- */
-
-let bucketItems = [
-
-    {
-        name: "Noah's Ark Encounter",
-        category: "Places",
-        stars: 5,
-        status: "Someday",
-        description: ""
-    },
-
-    {
-        name: "Niagara Falls",
-        category: "Places",
-        stars: 5,
-        status: "Someday",
-        description: ""
-    },
-
-    {
-        name: "Eiffel Tower",
-        category: "Places",
-        stars: 5,
-        status: "Someday",
-        description: ""
-    },
-
-    {
-        name: "Mount Rushmore",
-        category: "Places",
-        stars: 4,
-        status: "Someday",
-        description: ""
-    },
-
-    {
-        name: "Cancun, Mexico",
-        category: "Places",
-        stars: 4,
-        status: "Someday",
-        description: ""
-    },
-
-    {
-        name: "Visit all 50 states",
-        category: "Places",
-        stars: 5,
-        status: "Someday",
-        description: ""
-    },
-
-    {
-        name: "See Josiah Queen live",
-        category: "Concerts",
-        stars: 5,
-        status: "Someday",
-        description: ""
-    },
-
-    {
-        name: "See Forrest Frank live",
-        category: "Concerts",
-        stars: 5,
-        status: "Someday",
-        description: ""
-    },
-
-    {
-        name: "See Brandon Lake live",
-        category: "Concerts",
-        stars: 5,
-        status: "Someday",
-        description: ""
-    },
-
-    {
-        name: "See Phil Wickham live",
-        category: "Concerts",
-        stars: 5,
-        status: "Someday",
-        description: ""
-    },
-
-    {
-        name: "Finish reading the entire Bible",
-        category: "Faith",
-        stars: 5,
-        status: "Planning",
-        description: ""
-    },
-
-    {
-        name: "Have a rainy-day book + chai day",
-        category: "Random",
-        stars: 4,
-        status: "Someday",
-        description: ""
-    },
-
-    {
-        name: "Go on a big family adventure",
-        category: "Family & Friends",
-        stars: 5,
-        status: "Someday",
-        description: ""
-    },
-
-    {
-        name: "Go on a friend adventure",
-        category: "Family & Friends",
-        stars: 5,
-        status: "Someday",
-        description: ""
-    }
-
+const starterItems=[
+{name:"Noah's Ark Encounter",category:"Places",stars:5,status:"Someday",description:""},
+{name:"Niagara Falls",category:"Places",stars:5,status:"Someday",description:""},
+{name:"Eiffel Tower",category:"Places",stars:5,status:"Someday",description:""},
+{name:"Mount Rushmore",category:"Places",stars:4,status:"Someday",description:""},
+{name:"Cancun, Mexico",category:"Places",stars:4,status:"Someday",description:""},
+{name:"Visit all 50 states",category:"Places",stars:5,status:"Someday",description:""},
+{name:"See Josiah Queen live",category:"Concerts",stars:5,status:"Someday",description:""},
+{name:"See Forrest Frank live",category:"Concerts",stars:5,status:"Someday",description:""},
+{name:"See Brandon Lake live",category:"Concerts",stars:5,status:"Someday",description:""},
+{name:"See Phil Wickham live",category:"Concerts",stars:5,status:"Someday",description:""},
+{name:"Finish reading the entire Bible",category:"Faith",stars:5,status:"Planning",description:""},
+{name:"Have a rainy-day book + chai day",category:"Random",stars:4,status:"Someday",description:""},
+{name:"Go on a big family adventure",category:"Family & Friends",stars:5,status:"Someday",description:""},
+{name:"Go on a friend adventure",category:"Family & Friends",stars:5,status:"Someday",description:""}
 ];
 
+let bucketItems=JSON.parse(localStorage.getItem("graceAdventuresItems")||localStorage.getItem("myBucketList")||"null")||starterItems;
+let visitedStates=JSON.parse(localStorage.getItem("graceAdventuresStates")||"[]");
+let memories=JSON.parse(localStorage.getItem("graceAdventuresMemories")||"[]");
+let selectedStars=5;
 
-/* ---------- LOAD SAVED DATA ---------- */
+const states=[
+["Alabama","AL"],["Alaska","AK"],["Arizona","AZ"],["Arkansas","AR"],["California","CA"],["Colorado","CO"],["Connecticut","CT"],["Delaware","DE"],["Florida","FL"],["Georgia","GA"],
+["Hawaii","HI"],["Idaho","ID"],["Illinois","IL"],["Indiana","IN"],["Iowa","IA"],["Kansas","KS"],["Kentucky","KY"],["Louisiana","LA"],["Maine","ME"],["Maryland","MD"],
+["Massachusetts","MA"],["Michigan","MI"],["Minnesota","MN"],["Mississippi","MS"],["Missouri","MO"],["Montana","MT"],["Nebraska","NE"],["Nevada","NV"],["New Hampshire","NH"],["New Jersey","NJ"],
+["New Mexico","NM"],["New York","NY"],["North Carolina","NC"],["North Dakota","ND"],["Ohio","OH"],["Oklahoma","OK"],["Oregon","OR"],["Pennsylvania","PA"],["Rhode Island","RI"],["South Carolina","SC"],
+["South Dakota","SD"],["Tennessee","TN"],["Texas","TX"],["Utah","UT"],["Vermont","VT"],["Virginia","VA"],["Washington","WA"],["West Virginia","WV"],["Wisconsin","WI"],["Wyoming","WY"]
+];
 
-const savedItems =
-    localStorage.getItem("myBucketList");
-
-if (savedItems) {
-    bucketItems = JSON.parse(savedItems);
+function saveAll(){
+ localStorage.setItem("graceAdventuresItems",JSON.stringify(bucketItems));
+ localStorage.setItem("graceAdventuresStates",JSON.stringify(visitedStates));
+ localStorage.setItem("graceAdventuresMemories",JSON.stringify(memories));
 }
-
-
-/* ---------- VARIABLES ---------- */
-
-let selectedStars = 5;
-
-
-/* ---------- SAVE ---------- */
-
-function saveItems() {
-
-    localStorage.setItem(
-        "myBucketList",
-        JSON.stringify(bucketItems)
-    );
-
+function escapeHTML(text=""){return String(text).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#039;")}
+function showView(id,btn){
+ document.querySelectorAll(".view").forEach(v=>v.classList.remove("active"));
+ document.getElementById(id).classList.add("active");
+ document.querySelectorAll("nav button").forEach(b=>b.classList.remove("active"));
+ btn.classList.add("active");
+ if(id==="states")renderStates();
+ if(id==="memories")renderMemories();
+ if(id==="achievements")renderAchievements();
+ window.scrollTo({top:0,behavior:"smooth"});
 }
-
-
-/* ---------- GET CATEGORIES ---------- */
-
-function getCategories() {
-
-    let categories = [];
-
-    bucketItems.forEach(function(item) {
-
-        if (!categories.includes(item.category)) {
-            categories.push(item.category);
-        }
-
-    });
-
-    return categories.sort();
-
+function getCategories(){return [...new Set(bucketItems.map(i=>i.category))].sort()}
+function updateCategoryDropdown(){
+ const f=document.getElementById("categoryFilter"),old=f.value;
+ f.innerHTML='<option value="All">All categories</option>';
+ getCategories().forEach(c=>{let o=document.createElement("option");o.value=c;o.textContent=c;f.appendChild(o)});
+ if(getCategories().includes(old))f.value=old;
 }
-
-
-/* ---------- UPDATE CATEGORY DROPDOWN ---------- */
-
-function updateCategoryDropdown() {
-
-    const filter =
-        document.getElementById("categoryFilter");
-
-    const currentValue = filter.value;
-
-    filter.innerHTML =
-        '<option value="All">All categories</option>';
-
-    getCategories().forEach(function(category) {
-
-        const option =
-            document.createElement("option");
-
-        option.value = category;
-        option.textContent = category;
-
-        filter.appendChild(option);
-
-    });
-
-    if (getCategories().includes(currentValue)) {
-        filter.value = currentValue;
-    }
-
+function displayItems(){
+ const list=document.getElementById("bucketList"),search=document.getElementById("searchInput").value.toLowerCase(),cat=document.getElementById("categoryFilter").value,status=document.getElementById("statusFilter").value;
+ const filtered=bucketItems.filter(i=>i.name.toLowerCase().includes(search)&& (cat==="All"||i.category===cat)&&(status==="All"||i.status===status));
+ if(!filtered.length){list.innerHTML='<div class="empty"><div class="empty-icon">🌿</div><h3>Nothing here yet!</h3><p>Maybe this is your sign to add a new dream. ✨</p></div>';return}
+ list.innerHTML="";
+ filtered.forEach(item=>{
+  const index=bucketItems.indexOf(item),stars=[1,2,3,4,5].map(n=>n<=item.stars?"★":"☆").join("");
+  const card=document.createElement("div");card.className="bucket-card "+(item.status==="Done"?"done":"");
+  card.innerHTML=`<span class="category">${escapeHTML(item.category)}</span><h3>${escapeHTML(item.name)}</h3><div class="description">${escapeHTML(item.description||"")}</div><div class="stars">${stars}</div><div class="status">${item.status==="Done"?"✅":item.status==="Planning"?"📝":"🌱"} ${item.status}</div><div class="card-buttons"><button class="done-button" onclick="toggleDone(${index})">${item.status==="Done"?"↩ Not done":"✓ Mark done"}</button><button class="delete-button" onclick="deleteItem(${index})">🗑️</button></div>`;
+  list.appendChild(card);
+ });
 }
-
-
-/* ---------- DISPLAY ITEMS ---------- */
-
-function displayItems() {
-
-    const list =
-        document.getElementById("bucketList");
-
-    const search =
-        document
-        .getElementById("searchInput")
-        .value
-        .toLowerCase();
-
-    const category =
-        document
-        .getElementById("categoryFilter")
-        .value;
-
-    const status =
-        document
-        .getElementById("statusFilter")
-        .value;
-
-    list.innerHTML = "";
-
-
-    const filtered =
-        bucketItems.filter(function(item) {
-
-            const matchesSearch =
-                item.name
-                .toLowerCase()
-                .includes(search);
-
-            const matchesCategory =
-                category === "All" ||
-                item.category === category;
-
-            const matchesStatus =
-                status === "All" ||
-                item.status === status;
-
-            return (
-                matchesSearch &&
-                matchesCategory &&
-                matchesStatus
-            );
-
-        });
-
-
-    if (filtered.length === 0) {
-
-        list.innerHTML = `
-            <div class="empty">
-                <div class="empty-icon">🌿</div>
-                <h3>Nothing here yet!</h3>
-                <p>
-                    Maybe this is your sign to add a new dream. ✨
-                </p>
-            </div>
-        `;
-
-        updateStats();
-        return;
-    }
-
-
-    filtered.forEach(function(item) {
-
-        const realIndex =
-            bucketItems.indexOf(item);
-
-        const card =
-            document.createElement("div");
-
-        card.className =
-            "bucket-card " +
-            (item.status === "Done"
-                ? "done"
-                : "");
-
-
-        let stars = "";
-
-        for (let i = 1; i <= 5; i++) {
-
-            stars +=
-                i <= item.stars
-                ? "★"
-                : "☆";
-
-        }
-
-
-        card.innerHTML = `
-
-            <span class="category">
-                ${escapeHTML(item.category)}
-            </span>
-
-            <h3>
-                ${escapeHTML(item.name)}
-            </h3>
-
-            <div class="description">
-                ${escapeHTML(item.description || "")}
-            </div>
-
-            <div class="stars">
-                ${stars}
-            </div>
-
-            <div class="status">
-                ${getStatusEmoji(item.status)}
-                ${item.status}
-            </div>
-
-            <div class="card-buttons">
-
-                <button
-                    class="done-button"
-                    onclick="toggleDone(${realIndex})">
-
-                    ${
-                        item.status === "Done"
-                        ? "↩ Not done"
-                        : "✓ Mark done"
-                    }
-
-                </button>
-
-                <button
-                    class="delete-button"
-                    onclick="deleteItem(${realIndex})">
-
-                    🗑️
-
-                </button>
-
-            </div>
-
-        `;
-
-        list.appendChild(card);
-
-    });
-
-
-    updateStats();
-
+function updateStats(){
+ const total=bucketItems.length,done=bucketItems.filter(i=>i.status==="Done").length;
+ document.getElementById("completedCount").textContent=done;document.getElementById("totalCount").textContent=total;
+ document.getElementById("dreamCount").textContent=total;document.getElementById("doneCount").textContent=done;
+ document.getElementById("stateCount").textContent=visitedStates.length;
+ document.getElementById("achievementCount").textContent=countAchievements();
+ document.getElementById("progressFill").style.width=(total?done/total*100:0)+"%";
 }
-
-
-/* ---------- STATUS EMOJIS ---------- */
-
-function getStatusEmoji(status) {
-
-    if (status === "Done") {
-        return "✅";
-    }
-
-    if (status === "Planning") {
-        return "📝";
-    }
-
-    return "🌱";
-
+function toggleDone(i){bucketItems[i].status=bucketItems[i].status==="Done"?"Someday":"Done";saveAll();displayItems();updateStats();renderAchievements();toast(bucketItems[i].status==="Done"?"Dream completed! ✨":"Moved back to Someday 🌱")}
+function deleteItem(i){if(confirm(`Remove "${bucketItems[i].name}" from your bucket list?`)){bucketItems.splice(i,1);saveAll();updateCategoryDropdown();displayItems();updateStats();renderAchievements()}}
+function openModal(){document.getElementById("modalBackground").classList.add("show");document.getElementById("itemName").focus()}
+function closeModal(){document.getElementById("modalBackground").classList.remove("show");["itemName","itemDescription"].forEach(id=>document.getElementById(id).value="");document.getElementById("itemStatus").value="Someday";chooseStars(5)}
+function chooseStars(n){selectedStars=n;document.querySelectorAll(".star-choice").forEach(b=>b.classList.toggle("selected",Number(b.dataset.star)<=n))}
+function addItem(){
+ const name=document.getElementById("itemName").value.trim();if(!name){alert("Give your adventure a name first! ✨");return}
+ bucketItems.push({name,category:document.getElementById("itemCategory").value,stars:selectedStars,status:document.getElementById("itemStatus").value,description:document.getElementById("itemDescription").value.trim()});
+ saveAll();updateCategoryDropdown();displayItems();updateStats();renderAchievements();closeModal();toast("Added to your dreams! 🦋")
 }
-
-
-/* ---------- TOGGLE DONE ---------- */
-
-function toggleDone(index) {
-
-    if (bucketItems[index].status === "Done") {
-
-        bucketItems[index].status = "Someday";
-
-    } else {
-
-        bucketItems[index].status = "Done";
-
-    }
-
-    saveItems();
-    displayItems();
-
+function renderStates(){
+ const grid=document.getElementById("stateGrid");grid.innerHTML="";
+ states.forEach(([name,code])=>{
+  const visited=visitedStates.includes(code),label=document.createElement("label");label.className="state "+(visited?"visited":"");
+  label.innerHTML=`<input type="checkbox" ${visited?"checked":""} onchange="toggleState('${code}')"><span><div class="state-name">${name}</div><div class="state-code">${code}</div></span>`;
+  grid.appendChild(label);
+ });
+ document.getElementById("statesVisited").textContent=visitedStates.length;document.getElementById("statesFill").style.width=(visitedStates.length/50*100)+"%";updateStats();renderAchievements()
 }
-
-
-/* ---------- DELETE ---------- */
-
-function deleteItem(index) {
-
-    const name =
-        bucketItems[index].name;
-
-    const shouldDelete =
-        confirm(
-            "Remove \"" +
-            name +
-            "\" from your bucket list?"
-        );
-
-    if (!shouldDelete) {
-        return;
-    }
-
-    bucketItems.splice(index, 1);
-
-    saveItems();
-    updateCategoryDropdown();
-    displayItems();
-
+function toggleState(code){if(visitedStates.includes(code))visitedStates=visitedStates.filter(x=>x!==code);else visitedStates.push(code);saveAll();renderStates();toast(visitedStates.includes(code)?"State added to your map! 🌎":"State unchecked 🌱")}
+function randomDream(){
+ const choices=bucketItems.filter(i=>i.status!=="Done");if(!choices.length){document.getElementById("randomResult").textContent="You completed every dream on your list! 😭✨ Add another one!";return}
+ const item=choices[Math.floor(Math.random()*choices.length)];
+ document.getElementById("randomResult").textContent=`✨ ${item.name} — ${item.category}`;
 }
-
-
-/* ---------- MODAL ---------- */
-
-function openModal() {
-
-    document
-        .getElementById("modalBackground")
-        .classList.add("show");
-
-    document
-        .getElementById("itemName")
-        .focus();
-
+const achievementDefs=[
+["🌱","First Step","Complete your first dream",()=>bucketItems.filter(i=>i.status==="Done").length>=1],
+["⭐","Dream Chaser","Complete 5 dreams",()=>bucketItems.filter(i=>i.status==="Done").length>=5],
+["💫","Big Dreamer","Complete 10 dreams",()=>bucketItems.filter(i=>i.status==="Done").length>=10],
+["🇺🇸","Road Tripper","Visit 5 states",()=>visitedStates.length>=5],
+["🗺️","Explorer","Visit 10 states",()=>visitedStates.length>=10],
+["🏅","Fifty States","Visit all 50 states",()=>visitedStates.length===50],
+["📚","Bookish Adventure","Complete a Books & Hobbies dream",()=>bucketItems.some(i=>i.category==="Books & Hobbies"&&i.status==="Done")],
+["✝️","Faithful Journey","Complete a Faith dream",()=>bucketItems.some(i=>i.category==="Faith"&&i.status==="Done")],
+["🎵","Concert Girl","Complete a Concert dream",()=>bucketItems.some(i=>i.category==="Concerts"&&i.status==="Done")],
+["🫶","Together Is Better","Complete a Family & Friends dream",()=>bucketItems.some(i=>i.category==="Family & Friends"&&i.status==="Done")],
+["🏃‍♀️","Keep Moving","Complete a Sports dream",()=>bucketItems.some(i=>i.category==="Sports"&&i.status==="Done")],
+["✨","Living the List","Complete 25 dreams",()=>bucketItems.filter(i=>i.status==="Done").length>=25]
+];
+function countAchievements(){return achievementDefs.filter(a=>a[3]()).length}
+function renderAchievements(){
+ const grid=document.getElementById("achievementGrid");if(!grid)return;grid.innerHTML="";
+ achievementDefs.forEach(a=>{const unlocked=a[3](),d=document.createElement("div");d.className="achievement "+(unlocked?"unlocked":"");d.innerHTML=`<div class="achievement-icon">${a[0]}</div><h3>${a[1]}</h3><p>${a[2]}</p><div class="badge">${unlocked?"🏆 UNLOCKED":"🔒 KEEP GOING"}</div>`;grid.appendChild(d)});
+ updateStats()
 }
-
-
-function closeModal() {
-
-    document
-        .getElementById("modalBackground")
-        .classList.remove("show");
-
-    document
-        .getElementById("itemName")
-        .value = "";
-
-    document
-        .getElementById("itemDescription")
-        .value = "";
-
-    document
-        .getElementById("itemStatus")
-        .value = "Someday";
-
-    chooseStars(5);
-
+function openMemoryModal(){document.getElementById("memoryModalBackground").classList.add("show");document.getElementById("memoryDate").value=new Date().toISOString().slice(0,10)}
+function closeMemoryModal(){document.getElementById("memoryModalBackground").classList.remove("show");["memoryTitle","memoryDate","memoryWith","memoryPlace","memoryNote"].forEach(id=>document.getElementById(id).value="")}
+function addMemory(){
+ const title=document.getElementById("memoryTitle").value.trim();if(!title){alert("Give your memory a title first! 📸");return}
+ memories.unshift({title,date:document.getElementById("memoryDate").value,with:document.getElementById("memoryWith").value.trim(),place:document.getElementById("memoryPlace").value.trim(),note:document.getElementById("memoryNote").value.trim()});
+ saveAll();renderMemories();closeMemoryModal();toast("Memory saved! 🦋")
 }
-
-
-/* ---------- STAR SELECTOR ---------- */
-
-function chooseStars(number) {
-
-    selectedStars = number;
-
-    document
-        .querySelectorAll(".star-choice")
-        .forEach(function(button) {
-
-            const star =
-                Number(button.dataset.star);
-
-            if (star <= number) {
-                button.classList.add("selected");
-            } else {
-                button.classList.remove("selected");
-            }
-
-        });
-
+function renderMemories(){
+ const grid=document.getElementById("memoryGrid");if(!memories.length){grid.innerHTML='<div class="empty"><div class="empty-icon">📸</div><h3>Your memory book is waiting!</h3><p>Save your first little adventure here. 🩵</p></div>';return}
+ grid.innerHTML=memories.map((m,i)=>`<article class="memory"><div>📸 ${escapeHTML(m.date||"A special day")}</div><h3>${escapeHTML(m.title)}</h3><div class="memory-meta">${m.with?`🫶 ${escapeHTML(m.with)}<br>`:""}${m.place?`📍 ${escapeHTML(m.place)}`:""}</div>${m.note?`<div class="memory-note">${escapeHTML(m.note)}</div>`:""}<button class="delete-button" style="margin-top:12px" onclick="deleteMemory(${i})">🗑️ Remove</button></article>`).join("")
 }
-
-
-/* ---------- ADD ITEM ---------- */
-
-function addItem() {
-
-    const name =
-        document
-        .getElementById("itemName")
-        .value
-        .trim();
-
-    if (!name) {
-
-        alert(
-            "Give your adventure a name first! ✨"
-        );
-
-        return;
-    }
-
-
-    const category =
-        document
-        .getElementById("itemCategory")
-        .value;
-
-    const status =
-        document
-        .getElementById("itemStatus")
-        .value;
-
-    const description =
-        document
-        .getElementById("itemDescription")
-        .value
-        .trim();
-
-
-    bucketItems.push({
-
-        name: name,
-        category: category,
-        stars: selectedStars,
-        status: status,
-        description: description
-
-    });
-
-
-    saveItems();
-
-    updateCategoryDropdown();
-
-    displayItems();
-
-    closeModal();
-
-}
-
-
-/* ---------- STATS ---------- */
-
-function updateStats() {
-
-    const total =
-        bucketItems.length;
-
-    const done =
-        bucketItems.filter(function(item) {
-
-            return item.status === "Done";
-
-        }).length;
-
-
-    const fiveStars =
-        bucketItems.filter(function(item) {
-
-            return item.stars === 5 &&
-                   item.status !== "Done";
-
-        }).length;
-
-
-    const categories =
-        getCategories().length;
-
-
-    const percentage =
-        total === 0
-        ? 0
-        : Math.round((done / total) * 100);
-
-
-    document
-        .getElementById("completedCount")
-        .textContent = done;
-
-
-    document
-        .getElementById("totalCount")
-        .textContent = total;
-
-
-    document
-        .getElementById("dreamCount")
-        .textContent = total;
-
-
-    document
-        .getElementById("doneCount")
-        .textContent = done;
-
-
-    document
-        .getElementById("categoryCount")
-        .textContent = categories;
-
-
-    document
-        .getElementById("fiveStarCount")
-        .textContent = fiveStars;
-
-
-    document
-        .getElementById("progressFill")
-        .style.width =
-        percentage + "%";
-
-}
-
-
-/* ---------- SECURITY HELPER ---------- */
-
-function escapeHTML(text) {
-
-    return text
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;")
-        .replace(/"/g, "&quot;")
-        .replace(/'/g, "&#039;");
-
-}
-
-
-/* ---------- SEARCH ---------- */
-
-document
-    .getElementById("searchInput")
-    .addEventListener(
-        "input",
-        displayItems
-    );
-
-
-document
-    .getElementById("categoryFilter")
-    .addEventListener(
-        "change",
-        displayItems
-    );
-
-
-document
-    .getElementById("statusFilter")
-    .addEventListener(
-        "change",
-        displayItems
-    );
-
-
-/* ---------- CLOSE MODAL WHEN CLICKING OUTSIDE ---------- */
-
-document
-    .getElementById("modalBackground")
-    .addEventListener(
-        "click",
-        function(event) {
-
-            if (
-                event.target ===
-                document.getElementById(
-                    "modalBackground"
-                )
-            ) {
-
-                closeModal();
-
-            }
-
-        }
-    );
-
-
-/* ---------- START ---------- */
-
-updateCategoryDropdown();
-
-chooseStars(5);
-
-displayItems();
-
+function deleteMemory(i){if(confirm("Remove this memory?")){memories.splice(i,1);saveAll();renderMemories()}}
+function toast(msg){const t=document.getElementById("toast");t.textContent=msg;t.style.display="block";clearTimeout(window.toastTimer);window.toastTimer=setTimeout(()=>t.style.display="none",2200)}
+document.getElementById("searchInput").addEventListener("input",displayItems);
+document.getElementById("categoryFilter").addEventListener("change",displayItems);
+document.getElementById("statusFilter").addEventListener("change",displayItems);
+document.getElementById("modalBackground").addEventListener("click",e=>{if(e.target.id==="modalBackground")closeModal()});
+document.getElementById("memoryModalBackground").addEventListener("click",e=>{if(e.target.id==="memoryModalBackground")closeMemoryModal()});
+updateCategoryDropdown();chooseStars(5);displayItems();renderStates();renderMemories();renderAchievements();updateStats();
 </script>
-
 </body>
 </html>
